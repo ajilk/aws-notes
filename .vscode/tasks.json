@@ -18,12 +18,6 @@
       "problemMatcher": []
     },
     {
-      "label": "format",
-      "type": "shell",
-      "command": "latexindent -l=config/latexIndent.yaml -w main.tex",
-      "problemMatcher": []
-      },
-    {
       "label": "generate",
       "type": "shell",
       "command": "pdflatex -output-directory=dist -jobname=notes main.tex",

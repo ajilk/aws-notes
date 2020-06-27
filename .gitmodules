@@ -1,0 +1,3 @@
+[submodule "noted"]
+	path = noted
+	url = https://github.com/ajilk/noted.git
