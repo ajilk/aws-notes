@@ -1,1 +1,22 @@
-\1{IAM}
+\1{\right{Identity Access Management [ IAM ]}}
+aws security \{
+  \> Users - a physical person 
+  \> Groups - containes users (functions, teams) 
+  \> Roles - internal usage within aws resources (given to machines) 
+  \<
+\}
+\b{policies} - are JSON documents that defines what users, groups, roles can and cannot do \\
+\b{least privilege principle} - give the users the minimal amount of permissions they need to perform their job
+IAM Federation \{
+  \> big enterprises usually integrate their own repository of users with IAM
+  \> can use company credentials to log in
+  \> uses SAML standard [Security Assertion Markup Language] (e.g. Active Directory)
+  \<
+\}
+\r{\i{Note:}}\{
+  \> 1 IAM user per PHYSICAL PERSON
+  \> 1 IAM role per APPLICATION
+  \> IAM credentials should NEVER BE SHARED 
+  \> Never write IAM credentials in code or commit them
+  \> Never use ROOT account except for initial setup
+\}
