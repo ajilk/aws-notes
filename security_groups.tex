@@ -1,0 +1,11 @@
+\1{\right{Security Groups}}
+fundamental of network security, control how traffic is allowed into or out of EC2 machines, act as virtual firewall 
+
+security group:
+\{
+  \> can be attached to multiple instances
+  \> locked down to a region
+  \> lives ``outside'' the EC2 - if traffic is blocked the EC2 instance won't see it
+  \> By default, all inbound traffic is {\color{red} blocked} and all outbound traffic is {\color{green} authorized}
+  \> security groups can reference other security groups, IPs, CIDR blocks but not DNS names
+\}

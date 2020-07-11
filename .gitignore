@@ -5,3 +5,5 @@
 *.bak
 *.fdb_latexmk
 *.fls
+
+resources/
