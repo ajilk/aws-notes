@@ -1,0 +1,64 @@
+\right{\1{Section 4}}
+\2{high availability and scalibility} \{
+  \> scalibility - means that an application/system can handle greater loads by adapting \{
+    \> vertical scalibility - increasing the size of the instance
+    \> horizontal scalibility (= elasticity) - increasing the number of instances/systems
+  \}
+  \> high availability - means running your application/system across multi AZ \{
+    \< goal is to survive a data center loss
+  \}
+  \<
+\}
+
+\2{Load Balancing}\{
+  \> \b{load balancers} are servers that forward internet traffic to multiple servers (EC2 instances) downstream
+  \> why use a load balancer \{
+    \> spread load across multiple downstream instances
+    \> expose a single point of access (DNS) to your application
+    \> seamlessly handle failures of downstream instances
+    \> health checks
+    \> provdie SSL termaination (HTTPS) to your websites
+    \> high availability accross zones
+    \> separate public traffic from private traffic
+    \<
+  \}
+  \> ELB (EC2 Load Balancer) - managed load balancer \{
+    \> AWS guarentees that it will be working, takes care of upgrades, maintenance, high availability
+    \> intergrated with many AWS offerings/services
+    \> It costs less to setup your own load balancer but it will be a lot more effort on your end 
+    \<
+  \}
+  \> Health Checks - are crucial for load balancers \{
+    \> enable the load balancer to know if instances it forwards traffic to are available to reply to requests 
+    \> the health check is done on a port and a route (/health is common)
+    \> if the response is not 200, then the instance is unhealthy
+    \<
+  \}
+  \> Types of Load Balancers on AWS \{
+    \> Classic Load Balancer (CLB) (old) - HTTP , HTTPS, TCP
+    \> Application Load Balancer - HTTP, HTTPS, Websocket
+    \> Network Load Balancer - TCP, TLS (secure TCP), UDP
+    \< 
+    \> you can setup internal (private) or external (public) ELBs
+    \<
+  \}
+  \> Good to Know \{
+    \> LBs can scale but not instantaneously
+    \> Troubleshooting \{
+      \> 4xx errors are client induced errors
+      \> 5xx errors are application induced errors
+      \> Load balancer errors 503 means at capacity or no registered target
+      \> If the LB can't connect to your application, check your security groups
+    \}
+    \> Monitoring \{
+      \> ELB access logs will log all access request
+      \> CloudWatch Metrics will give you aggregate statistics
+      \<
+    \}
+  \}
+  \> Classic Load Balancers \{
+    \> Supports TCP (Layer 4), HTTP (Layer 7) and HTTPS (Layer 7)
+    \> Health checks are TCP or HTTP based
+    \> fixed hostname (xxx.region.elb.amazonaws.com)
+  \}
+\}
